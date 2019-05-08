@@ -1,18 +1,22 @@
-a=open("following.txt","r")
-b=open("followers.txt","r")
-alist= []
-for x in a:
-    alist.append(x)
-        
-blist= []
-for x in b:
-    blist.append(x)
+import dataRetrieval
 
-for y in alist:
+dataRetrieval.getData()
+
+followingFolder=open("following.txt","r")
+followingList= []
+for following in followingFolder:
+    followingList.append(following)
+
+followersFolder=open("followers.txt","r") 
+followersFist= []
+for follower in followersFolder:
+    followersFist.append(follower)
+
+for followingUser in followingList:
     control=True
-    for z in blist:
-        if z==y:
+    for followerUser in followersFist:
+        if followerUser==followingUser:
             control=False 
     
     if control==True:
-        print(y)
+        print(followingUser)
